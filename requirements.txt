@@ -3,5 +3,5 @@ pandas
 torch==2.4.1
 streamlit
 Pillow
-opencv-python<=4.9.0.80
+opencv-python-headless
 ultralytics>=8.2.34

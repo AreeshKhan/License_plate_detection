@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>License Plate Detection</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>License Plate Detection</h1>
+            <p>Upload an image, and we will detect the license plate for you.</p>
+        </div>
+
+        <div class="upload-section">
+            <form action="/" method="post" enctype="multipart/form-data">
+                <div class="file-input">
+                    <label for="file">Choose Image</label>
+                    <input type="file" name="file" id="file" accept="image/*" required>
+                </div>
+                <button type="submit">Detect License Plate</button>
+            </form>
+        </div>
+
+        <div class="output-section">
+            {% if detected_image %}
+                <h2>Detected License Plate</h2>
+                <img src="{{ detected_image }}" alt="Detected License Plate">
+            {% elif message %}
+                <p>{{ message }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>License Plate Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px 0px #ccc;
+            text-align: center;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        input[type="file"] {
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>inside License Plate Detection</h1>
+        <form action="/" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" required>
+            <br>
+            <button type="submit">Upload and Detect</button>
+        </form>
+    </div>
+</body>
+</html> -->
